@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block title %}
+  Home Page
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-content">
+    <img class="logo" src="https://as2.ftcdn.net/v2/jpg/03/43/04/71/1000_F_343047136_lNsHTX7IcwHj7hruMIYFCYEYRTvYQsj2.jpg" alt="logo">
+    <style>
+      .logo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+    </style>
+    <br>
+    <br>
+
+    <h1>Welcome to Your E-Commerce Store</h1>
+    <p>Find everything you need in one place.</p>
+    <a href="{{ url_for('market_page') }}" class="btn">Shop Now</a>
+  </div>
+</section>
+
+<style>
+  /* styles.css */
+
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Header */
+  header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #ff6600;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-image: url("hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 100px 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .hero .btn {
+    display: inline-block;
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .hero .btn:hover {
+    background-color: #e65c00;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #333333;
+    padding: 20px 0;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  footer nav ul {
+    display: flex;
+  }
+
+  footer nav ul li {
+    margin-left: 10px;
+  }
+
+  footer nav ul li:first-child {
+    margin-left: 0;
+  }
+
+  footer nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+</style>
+
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2023 Your E-Commerce Store. All rights reserved.</p>
+    <nav>
+      <ul>
+        <li><a href="{{url_for('privacy_policy')}}">Privacy Policy</a></li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a></li> <!-- Update the href with the appropriate URL -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+{% endblock %}

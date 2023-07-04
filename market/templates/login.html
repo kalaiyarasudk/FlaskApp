@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <body class="text-center">
+        <div class="d-flex justify-content-center align-items-center" style="height: 50vh;">
+          
+            <form method="POST" class="form-register" style="color: white; width: 400px; height: 300px;">
+                
+                    <img class="logo" src="https://as2.ftcdn.net/v2/jpg/03/43/04/71/1000_F_343047136_lNsHTX7IcwHj7hruMIYFCYEYRTvYQsj2.jpg" alt="logo">
+                    <style>
+                        .logo {
+                            width: 200px;
+                            height: 200px;
+                            border-radius: 50%;
+                        }
+                    </style>
+                
+                <h1>Sign In</h1>
+                <br>
+                {{ form.csrf_token }}
+
+                {{ form.user_name.label() }}
+                {{ form.user_name(class='form-control', placeholder='Enter Username') }}
+
+                {{ form.password.label() }}
+                {{ form.password(class='form-control', placeholder='Password') }}
+
+                <br>
+                <div class="checkbox mb-3">
+                    <h6>Do not have an account?</h6>
+                    <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+                 </div>
+     
+                 {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+     
+             </form>
+         </div>
+
+</body>
+
+
+{% endblock %}

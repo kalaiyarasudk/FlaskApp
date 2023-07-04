@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Market Page
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-8">
+        <h2>Available items in market</h2>
+        <p>click on one of the item fot buying</p>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Barcode</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items %}
+                {% include 'includes/item_description_modal.html' %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.barcode }}</td>
+                    <td>₹{{ item.price }}</td>
+                    <td>
+                        <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-{{item.id}}">More info</button>
+                        <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Purchase-{{item.id}}">Purchase item</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   
+
+<style>
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+</style>
+{% endblock %}
